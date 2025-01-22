@@ -17,6 +17,7 @@
 
     //Conectandose con el host de la base de datos de mysqli (cambia esto a tu host local (que deberia ser localhost igual)
     //y el nombre de la base de datos, deja root y password igual)
+    //RECUERDA CAMBIAR "base_de_datos_prueba" POR EL NOMBRE DE TU BASE DE DATOS LOCAL EN MYSQL
     $mysqli = new mysqli("localhost","root","","base_de_datos_prueba");
         
         //Selecciona el registro de usuario en base al nombre de usuario de la variable _usuario
@@ -55,6 +56,7 @@
 
         }
 
+    //Cierra la conexion MySQL
     $mysqli -> close();
     
     

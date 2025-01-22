@@ -47,20 +47,26 @@
 </head>
 <body>
 
+    <!--- Barrita de Arriba --->
     <ul class="nav justify-content-end bg-success">
+    <!--- (Todo esto se cambia a los datos que vayas a necesitar) --->
 
+        <!--- Dashboard --->
         <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="#">Dashboard</a>
         </li>
 
+        <!--- Usuarios --->
         <li class="nav-item">
             <a class="nav-link text-white" href="#">Usuarios</a>
         </li>
 
+        <!--- Admin --->
         <li class="nav-item">
             <a class="nav-link text-white" href="#">Admin</a>
         </li>
 
+        <!--- Sesion --->
         <li class="nav-item">
             <a href = "../logout.php" class="nav-link text-white" aria-disabled="true">Cerrar Sesion (<?php echo $_SESSION['nombre_user']; ?>)</a>
         </li>
@@ -68,7 +74,8 @@
     </ul>
 
     <div class = "container text-center mt-5">
-
+        
+        <!--- Titulo del listado de usuarios --->
         <h1> Listado de Usuarios </h1>
 
     </div>
@@ -84,6 +91,7 @@
             <div class="row">
 
                 <div class="col">
+                    <!--- Boton para agregar un usuario --->
                     <a href="agregar_usuarios.php"><button class = "btn btn-primary">Agregar Usuario</button></a>
                 </div>
 
@@ -91,7 +99,9 @@
                     <form action="estudiantes.php" method = "post">
                         <div class="input-group mb-2">
                                 <input type="text" name = "busqueda" class="form-control"  placeholder="Buscar usuario por cedula" aria-describedby="basic-addon1">
+                                <!--- Boton para buscar un registro --->
                                 <button type = "submit" class = "btn btn-primary">Buscar</button>
+                                <!--- Boton para regresar a la pagina principal de los registros --->
                                 <a href = "estudiantes.php"><button type = "button" class = "btn btn-secondary">Resetear</button></a>
                         </div>
 
@@ -103,12 +113,14 @@
 
         </div>
 
+        <!--- Texto que solo aparece una vez has buscado un registro --->
         <div class="container text-center">
             <?php  if (isset($_POST['busqueda'])) {echo "Resultados de busqueda para: ".$_POST['busqueda'];} ?>
         </div>
 
         </div>
 
+        <!--- TITULO DE LA TABLA PRINCIPAL --->
         <div class = "card-body table-scroll">
             <table class = "table table-sm text-center">
 
@@ -141,16 +153,52 @@
     
                             <tr>
     
-                            <td><?php echo $num++; ?></td>
-                            <td><?php echo $fila_buscar['nombres'] ?></td>
-                            <td><?php echo $fila_buscar['apellido'] ?></td>
-                            <td><?php echo $fila_buscar['cedula'] ?></td>
-                            <td><?php echo $fila_buscar['telefono'] ?></td>
-                            <td><?php echo $fila_buscar['correo'] ?></td>
+                            <td><?php echo $num++; ?></td> <!--- Numero que agrega por cada fila para tener todo ordenatido --->
+                            <td><?php echo $fila_buscar['nombres'] ?></td> <!--- Nombres de Cada Fila --->
+                            <td><?php echo $fila_buscar['apellido'] ?></td> <!--- Apellidos de Cada Fila --->
+                            <td><?php echo $fila_buscar['cedula'] ?></td> <!--- Cedula de Cada Fila --->
+                            <td><?php echo $fila_buscar['telefono'] ?></td> <!--- Telefono de Cada Fila --->
+                            <td><?php echo $fila_buscar['correo'] ?></td> <!--- Correo de Cada Fila --->
                             <td>
     
-                                <button type = "button" class = "btn btn-warning">E</button>
-    
+                                <a href = "editar_usuarios.php?id=<?php echo base64_encode($fila_buscar['id']); ?>"><button type = "button" class = "btn btn-warning">E</button></a>
+
+                                <button type = "button" class = "btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModalSearch_<?php echo $fila_buscar['id']; ?>">X</button>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteModalSearch_<?php echo $fila_buscar['id']; ?>" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                                    
+                                    <div class="modal-dialog">
+
+                                        <!--- Contenido del Modal --->
+                                        <div class="modal-content">
+
+                                            <div class="modal-header bg-danger text-white"> <!--- Clase: Cabezal del Modal, Color del modal (bg-danger = rojo), color del texto --->
+                                                
+                                                <!--- Titulo del Modal --->
+                                                <h1 class="modal-title fs-5" id="DeleteModalLabel">Eliminar Registro</h1>
+
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                            </div>
+
+                                            <!--- Mensaje del Modal --->
+                                            <div class="modal-body">
+                                                <h4>¿Seguro que desea eliminar el registro del usuario: <?php echo $fila_buscar['nombres'].' '.$fila_buscar['apellido']; ?>?</h4>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <!--- Boton de Cancelar --->
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <!--- Boton de borrar --->
+                                                <a href = "borrar.php?id=<?php echo base64_encode($fila_buscar['id']); ?>"><button type = "button" class = "btn btn-danger">Eliminar Registro</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </td>
     
                             </tr>
@@ -167,15 +215,50 @@
 
                             <tr>
 
-                            <td><?php echo $num++; ?></td>
-                            <td><?php echo $fila['nombres'] ?></td>
-                            <td><?php echo $fila['apellido'] ?></td>
-                            <td><?php echo $fila['cedula'] ?></td>
-                            <td><?php echo $fila['telefono'] ?></td>
-                            <td><?php echo $fila['correo'] ?></td>
+                            <td><?php echo $num++; ?></td> <!--- Numero que agrega por cada fila para tener todo ordenatido --->
+                            <td><?php echo $fila['nombres'] ?></td>  <!--- Nombres de Cada Fila --->
+                            <td><?php echo $fila['apellido'] ?></td> <!--- Apellidos de Cada Fila --->
+                            <td><?php echo $fila['cedula'] ?></td> <!--- Cedula de Cada Fila --->
+                            <td><?php echo $fila['telefono'] ?></td> <!--- Telefono de Cada Fila --->
+                            <td><?php echo $fila['correo'] ?></td> <!--- Correo de Cada Fila --->
                             <td>
 
-                                <button type = "button" class = "btn btn-warning">E</button>
+                                <a href = "editar_usuarios.php?id=<?php echo base64_encode($fila['id']); ?>"><button type = "button" class = "btn btn-warning">E</button></a>
+
+                                <button type = "button" class = "btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal_<?php echo $fila['id']; ?>">X</button>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="DeleteModal_<?php echo $fila['id']; ?>" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <!--- Contenido del Modal --->
+                                        <div class="modal-content">
+
+                                            <div class="modal-header bg-danger text-white"> <!--- Clase: Cabezal del Modal, Color del modal (bg-danger = rojo), color del texto --->
+
+                                                <!--- Titulo del Modal --->
+                                                <h1 class="modal-title fs-5" id="DeleteModalLabel">Eliminar Registro</h1>
+
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <!--- Mensaje del Modal --->
+                                                <h4>¿Seguro que desea eliminar el registro del usuario: <?php echo $fila['nombres'].' '.$fila['apellido']; ?>?</h4>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <!--- Boton de Cancelar --->
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                <!--- Boton de borrar --->
+                                                <a href = "borrar.php?id=<?php echo base64_encode($fila['id']); ?>"><button type = "button" class = "btn btn-danger">Eliminar Registro</button></a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </td>
 
