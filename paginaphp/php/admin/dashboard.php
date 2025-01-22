@@ -22,7 +22,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link text-white" href="#">Estudiantes</a>
+            <a href = "estudiantes.php" class="nav-link text-white" href="#">Usuarios</a>
         </li>
 
         <li class="nav-item">

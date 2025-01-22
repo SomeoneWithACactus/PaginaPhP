@@ -1,0 +1,41 @@
+.titulo{ /* Clase: "Titulo" */
+
+    font-family: 'Comic Sans MS', Courier, monospace; /* Fuente de la Clase */
+    font-size: 60px; /* Tamaño de fuente de la Clase */
+    font-weight: bold; /* Tipo de fuente de la Clase */
+    text-align: center; /* Color de fuente de la Clase */
+
+}
+
+.titulo2{ /* Clase: "Titulo2" */
+
+    font-family: 'Comic Sans MS', Courier, monospace; /* Fuente de la Clase */
+    font-size: 30px; /* Tamaño de fuente de la Clase */
+    font-weight: bold; /* Tipo de fuente de la Clase */
+    color:  rgb(105, 14, 49); /* Color de fuente de la Clase */
+
+}
+
+img{ /* Clase de imagenes */
+
+    width: 250px; /* Tamaño de la imagen en pixeles */
+    border: 15px solid rgb(105, 14, 49); /* Borde: [Tamaño en pixeles], [Estilo de borde], [Color] */
+    border-radius: 360px; /* Radio del borde (hace las puntas mas redonditas en cantidades bajas) */
+    box-shadow: 5px 5px 150px 5px  rgb(105, 14, 49); /* Sombra de la imagen: [Posicion X], [Posicion Y], [Disipacion de la Sombra], [Tamaño de la sombra], [Color] */
+
+}
+
+img:hover{ /* Cambios a la clase imagen que solo es afectada si le pones el mouse encima */
+
+    width: 270px; /* Tamaño de la imagen en pixeles */
+    border: 15px solid rgb(189, 78, 253); /* Borde: [Tamaño en pixeles], [Estilo de borde], [Color] */
+    border-radius: 360px;  /* Radio del borde (hace las puntas mas redonditas en cantidades bajas) */
+    box-shadow: 5px 5px 150px 5px rgb(189, 78, 253); /* Sombra de la imagen: [Posicion X], [Posicion Y], [Disipacion de la Sombra], [Tamaño de la sombra], [Color] */
+
+}
+
+body{ /* clase del fondo */
+
+    background-color: rgb(179, 224, 253);
+
+}
