@@ -10,7 +10,7 @@
 
     //Resultados, Si se elimino exitosamente o no
     if ($resultado) {
-        echo '<script>alert("Usuario eliminado con exito"); window.location.href = "estudiantes.php";</script>'; //Exito: Regresar a la pestaña de agregar usuarios
+        echo '<script>alert("Usuario eliminado con exito"); window.location.href = "usuarios.php";</script>'; //Exito: Regresar a la pestaña de agregar usuarios
     } else {
         echo "Hubo un error al intentar guardar los datos"; //Fallo: Informar del fallo
     }

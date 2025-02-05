@@ -126,6 +126,15 @@
 
                     </div>
 
+                    <div class="row">
+
+                        <div class="col">
+                        <label for=""><b>Contraseña</b></label>
+                        <input type="text" class = "form-control" value = "<?php echo $filas_BUSCAR['password']; ?>" name = "password_usuario" maxlength="20" required="">
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <!-- Botones de Acciones -->

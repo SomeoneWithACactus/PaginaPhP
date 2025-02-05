@@ -10,6 +10,7 @@
     $_cedula   = $_POST['cedula_usuario']; //Nueva Cedula del Usuario a Editar
     $_correo   = $_POST['correo_usuario']; //Nuevo Correo del Usuario a Editar
     $_telefono = $_POST['telefono_usuario']; //Nuevo Telefono del Usuario a Editar
+    $_password = $_POST['password_usuario']; //Nuevo Telefono de Nuevo Usuario
 
 
     if (isset($_nombre) == null OR isset($_apellido) == null OR //Revisando si todos los campos estan llenos correctamente
@@ -24,7 +25,8 @@
             apellido = '$_apellido',
             cedula   = '$_cedula',
             telefono = '$_telefono',
-            correo   = '$_correo'
+            correo   = '$_correo',
+            password = '$_password'
 
             WHERE id = $_id
             ";
@@ -33,7 +35,7 @@
 
         //Resultados, Si se guardo exitosamente o no
         if ($resultado) {
-            echo '<script>alert("Usuario actualizado con exito"); window.location.href = "estudiantes.php";</script>'; //Exito: Regresar a la pestaña de agregar usuarios
+            echo '<script>alert("Usuario actualizado con exito"); window.location.href = "usuarios.php";</script>'; //Exito: Regresar a la pestaña de agregar usuarios
         } else {
             echo "Hubo un error al intentar guardar los datos"; //Fallo: Informar del fallo
         }

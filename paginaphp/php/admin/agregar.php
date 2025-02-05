@@ -9,6 +9,7 @@
     $_cedula   = $_POST['cedula_usuario']; //Nueva Cedula de Nuevo Usuario
     $_correo   = $_POST['correo_usuario']; //Nuevo Correo de Nuevo Usuario
     $_telefono = $_POST['telefono_usuario']; //Nuevo Telefono de Nuevo Usuario
+    $_password = $_POST['password_usuario']; //Nuevo Telefono de Nuevo Usuario
 
     //Meter todo en la nueva variable insercion
     if (isset($_nombre) == null OR isset($_apellido) == null OR
@@ -21,7 +22,8 @@
         apellido = '$_apellido',
         cedula   = '$_cedula',
         telefono = '$_telefono',
-        correo   = '$_correo'
+        correo   = '$_correo',
+        password = '$_password'
         ";
     
     
