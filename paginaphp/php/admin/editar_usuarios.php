@@ -17,20 +17,21 @@
 </head>
 <body>
 
-    <ul class="nav justify-content-end bg-success">
+    <!--- Barrita de Arriba --->
+    <ul class="nav justify-content-end bg-danger">
+    <!--- (Todo esto se cambia a los datos que vayas a necesitar) --->
 
+        <!--- Dashboard --->
         <li class="nav-item">
             <a class="nav-link active text-white" aria-current="page" href="dashboard.php">Dashboard</a>
         </li>
 
+        <!--- Usuarios --->
         <li class="nav-item">
-            <a class="nav-link text-white" href="estudiantes.php">Usuarios</a>
+            <a class="nav-link text-white" href="#">Usuarios</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">Admin</a>
-        </li>
-
+        <!--- Sesion --->
         <li class="nav-item">
             <a href = "../logout.php" class="nav-link text-white" aria-disabled="true">Cerrar Sesion (<?php echo $_SESSION['nombre_user']; ?>)</a>
         </li>

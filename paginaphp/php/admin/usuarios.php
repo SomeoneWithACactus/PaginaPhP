@@ -48,22 +48,17 @@
 <body>
 
     <!--- Barrita de Arriba --->
-    <ul class="nav justify-content-end bg-success">
+    <ul class="nav justify-content-end bg-danger">
     <!--- (Todo esto se cambia a los datos que vayas a necesitar) --->
 
         <!--- Dashboard --->
         <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">Dashboard</a>
+            <a class="nav-link active text-white" aria-current="page" href="dashboard.php">Dashboard</a>
         </li>
 
         <!--- Usuarios --->
         <li class="nav-item">
             <a class="nav-link text-white" href="#">Usuarios</a>
-        </li>
-
-        <!--- Admin --->
-        <li class="nav-item">
-            <a class="nav-link text-white" href="#">Admin</a>
         </li>
 
         <!--- Sesion --->
