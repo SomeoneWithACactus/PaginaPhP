@@ -48,8 +48,8 @@
                 $_SESSION['correo_user'] = $row['correo'];
                 $_SESSION['telefono_user'] = $row['telefono'];
 
-                //te lleva a la siguiente pagina
-                header("Location:../main.php");
+                //te lleva a la siguiente pagina USUARIO
+                header("Location:../index.php");
                 exit();
 
             } else { //En caso de que la contraseña sea incorrecta
@@ -74,7 +74,7 @@
                     $_SESSION['correo_user'] = $row['correo'];
                     $_SESSION['tipo_user'] = $row['tipo_usario'];
     
-                    //te lleva a la siguiente pagina
+                    //te lleva a la siguiente pagina ADMIN
                     header("Location:admin/dashboard.php");
                     exit();
     

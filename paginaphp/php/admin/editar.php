@@ -17,7 +17,7 @@
         isset($_cedula) == null OR isset($_correo) == null OR
         isset($_telefono) == null) { 
             //En caso de que no
-            echo '<script>alert("Debe rellenar todos los campos"); window.location.href = "estudiantes.php";</script>';
+            echo '<script>alert("Debe rellenar todos los campos"); window.location.href = "usuarios.php";</script>';
     } else {
             //En caso de que si
         $edicion = "UPDATE usuarios_venta SET

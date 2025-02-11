@@ -112,7 +112,7 @@
 
                 <div class = "text-center mt-3">
 
-                    <a href = "estudiantes.php"><button class = "btn btn-danger" type="button">Cancelar</button></a>
+                    <a href = "usuarios.php"><button class = "btn btn-danger" type="button">Cancelar</button></a>
                     <button class = "btn btn-secondary" type="reset">Borrar</button>
                     <button class = "btn btn-primary" type="submit">Guardar</button>
 

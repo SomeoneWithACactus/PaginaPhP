@@ -40,7 +40,7 @@
             <a href = "../logout.php" class="nav-link text-white" aria-disabled="true">Cerrar Sesion</a>
         </li>
         <li class="nav-item">
-            <a href = "#" class="nav-link text-white" aria-disabled="true">Productos</a>
+            <a href = "productos/productos.php" class="nav-link text-white" aria-disabled="true">Productos</a>
         </li>
 
     </ul>

@@ -28,7 +28,7 @@
 
         <!--- Usuarios --->
         <li class="nav-item">
-            <a class="nav-link text-white" href="#">Usuarios</a>
+            <a class="nav-link text-white" href="../usuarios.php">Usuarios</a>
         </li>
 
         <!--- Sesion --->
@@ -51,7 +51,7 @@
         //haciendo conexion con el MySQL
         $mysqli = new mysqli("localhost","root","","base_de_datos_prueba");
 
-        $consulta_BUSCAR = "SELECT * FROM usuarios_venta WHERE  /* Seleccionar del usuario_venta: */
+        $consulta_BUSCAR = "SELECT * FROM productos WHERE  /* Seleccionar del usuario_venta: */
         (id LIKE '$id')"; /* la id que sea EXACTAMENTE igual a la variable "$id"*/
         
         $resultados_BUSCAR = $mysqli->query($consulta_BUSCAR); //Define la variable que va a buscar
@@ -71,22 +71,20 @@
             if ($resultados_BUSCAR->num_rows == 1) { 
                 ?>
 
-                <form action = "editar.php" method = "POST">
+                <form action = "editar_p.php" method = "POST">
 
-                <div class="container text-center"> <!-- NUEVA LINEA -->
+                <div class="container text-center">
 
                     <div class="row">
 
-                        <!-- Nombre del usuario -->
                         <div class="col">
-                        <label for=""><b>Nombres</b></label>
-                        <input type="text" class = "form-control" value = "<?php echo $filas_BUSCAR['nombres']; ?>" name = "nombres_usuario" maxlength="60" required="">
+                        <label for=""><b>Nombre</b></label>
+                        <input type="text" class = "form-control" name = "nombre" value = "<?php echo $filas_BUSCAR['nombre']; ?>" maxlength="60" required="">
                         </div>
 
-                        <!-- Apellido del usuario -->
                         <div class="col">
-                        <label for=""><b>Apellidos</b></label>
-                        <input type="text" class = "form-control" value = "<?php echo $filas_BUSCAR['apellido']; ?>" name = "apellidos_usuario" maxlength="60" required="">
+                        <label for=""><b>Empresa</b></label>
+                        <input type="text" class = "form-control" name = "empresa" value = "<?php echo $filas_BUSCAR['empresa']; ?>" maxlength="60" required="">
                         </div>
                         
 
@@ -94,47 +92,14 @@
 
                 </div>
 
-                <div class="container text-center"> <!-- NUEVA LINEA -->
+                <div class="container text-center">
 
                     <div class="row">
 
-                        <!-- Cedula del usuario -->
                         <div class="col-4">
-                        <label for=""><b>Cedula</b></label>
-                        <input type="number" class = "form-control" value = "<?php echo $filas_BUSCAR['cedula']; ?>" name = "cedula_usuario" maxlength="10" required="">
+                        <label for=""><b>Precio</b></label>
+                        <input type="number" class = "form-control" name = "precio" value = "<?php echo $filas_BUSCAR['precio']; ?>" maxlength="10" required="">
                         </div>
-
-                        <!-- Correo del usuario -->
-                        <div class="col">
-                        <label for=""><b>Correo</b></label>
-                        <input type="email" class = "form-control" value = "<?php echo $filas_BUSCAR['correo']; ?>" name = "correo_usuario" maxlength="40" required="">
-                        </div>
-                        
-
-                    </div>
-
-                </div>
-
-                <div class="container text-center"> <!-- NUEVA LINEA -->
-
-                    <div class="row">
-
-                        <!-- Telefono del usuario -->
-                        <div class="col">
-                        <label for=""><b>Telefono</b></label>
-                        <input type="number" class = "form-control" value = "<?php echo $filas_BUSCAR['telefono']; ?>" name = "telefono_usuario" maxlength="15" required="">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col">
-                        <label for=""><b>Contraseña</b></label>
-                        <input type="text" class = "form-control" value = "<?php echo $filas_BUSCAR['password']; ?>" name = "password_usuario" maxlength="20" required="">
-                        </div>
-
-                    </div>
 
                 </div>
 
@@ -142,7 +107,7 @@
                 <div class = "text-center mt-3">
 
                     <!-- Cancelar, te regresa a la pagina con los usuarios -->
-                    <a href = "usuarios.php"><button class = "btn btn-danger" type="button">Cancelar</button></a>
+                    <a href = "productos.php"><button class = "btn btn-danger" type="button">Cancelar</button></a>
 
                     <!-- Borrar, recarga la pagina y elimina todo lo escrito -->
                     <button class = "btn btn-secondary" type="reset">Borrar</button>
@@ -153,7 +118,7 @@
                 </div>
 
                 <!-- En secreto: pasa la id del usuario para ser revisada y editada posteriormente en el archivo "editar.php" -->
-                <input type="hidden" name="id_usuario" value="<?php echo $id; ?>">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
 
                 </form>
 
