@@ -49,7 +49,7 @@
                 $_SESSION['telefono_user'] = $row['telefono'];
 
                 //te lleva a la siguiente pagina USUARIO
-                header("Location:../index.php");
+                header("Location:../main_user.php");
                 exit();
 
             } else { //En caso de que la contraseña sea incorrecta
